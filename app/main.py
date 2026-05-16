@@ -1,5 +1,7 @@
 from fastapi import FastAPI
 
+from app.config import settings
+
 
 backend = FastAPI(
     title="ContentPilotAI API",
@@ -12,4 +14,5 @@ backend = FastAPI(
 def home():
     return {
         "message": "ContentPilotAI backend is running.",
+        "model": settings.openai_model,
     }
